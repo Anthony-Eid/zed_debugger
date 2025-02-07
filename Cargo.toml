@@ -1,0 +1,16 @@
+[package]
+name = "zed_debugger"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+async-std = "1.12.0"
+dap-types = { git = "https://github.com/zed-industries/dap-types" }
+smol = "1.2"
+smol-macros = "0.1.1"
+macro_rules_attribute = "0.2.0"
+
+[profile.dev]
+debug = "full"
+opt-level = 0        # No optimization
+debug-assertions = true

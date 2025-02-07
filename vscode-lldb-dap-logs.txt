@@ -1,0 +1,628 @@
+-->
+Content-Length: 543
+
+{
+  "arguments": {
+    "adapterID": "lldb-dap",
+    "clientID": "vscode",
+    "clientName": "Visual Studio Code",
+    "columnsStartAt1": true,
+    "linesStartAt1": true,
+    "locale": "en",
+    "pathFormat": "path",
+    "supportsANSIStyling": true,
+    "supportsArgsCanBeInterpretedByShell": true,
+    "supportsInvalidatedEvent": true,
+    "supportsMemoryEvent": true,
+    "supportsMemoryReferences": true,
+    "supportsProgressReporting": true,
+    "supportsRunInTerminalRequest": true,
+    "supportsStartDebuggingRequest": true,
+    "supportsVariablePaging": true,
+    "supportsVariableType": true
+  },
+  "command": "initialize",
+  "seq": 1,
+  "type": "request"
+}
+<--
+Content-Length: 1323
+
+{
+  "body": {
+    "completionTriggerCharacters": [
+      ".",
+      " ",
+      "\t"
+    ],
+    "exceptionBreakpointFilters": [
+      {
+        "default": false,
+        "filter": "cpp_catch",
+        "label": "C++ Catch"
+      },
+      {
+        "default": false,
+        "filter": "cpp_throw",
+        "label": "C++ Throw"
+      },
+      {
+        "default": false,
+        "filter": "objc_catch",
+        "label": "Objective-C Catch"
+      },
+      {
+        "default": false,
+        "filter": "objc_throw",
+        "label": "Objective-C Throw"
+      },
+      {
+        "default": false,
+        "filter": "swift_catch",
+        "label": "Swift Catch"
+      },
+      {
+        "default": false,
+        "filter": "swift_throw",
+        "label": "Swift Throw"
+      }
+    ],
+    "supportTerminateDebuggee": true,
+    "supportsCompletionsRequest": true,
+    "supportsConditionalBreakpoints": true,
+    "supportsConfigurationDoneRequest": true,
+    "supportsDelayedStackTraceLoading": true,
+    "supportsDisassembleRequest": true,
+    "supportsEvaluateForHovers": true,
+    "supportsExceptionInfoRequest": true,
+    "supportsExceptionOptions": true,
+    "supportsFunctionBreakpoints": true,
+    "supportsGotoTargetsRequest": false,
+    "supportsHitConditionalBreakpoints": true,
+    "supportsLoadedSourcesRequest": false,
+    "supportsLogPoints": true,
+    "supportsModulesRequest": true,
+    "supportsProgressReporting": true,
+    "supportsRestartFrame": false,
+    "supportsRestartRequest": true,
+    "supportsRunInTerminalRequest": true,
+    "supportsSetVariable": true,
+    "supportsStepBack": false,
+    "supportsStepInTargetsRequest": false,
+    "supportsValueFormattingOptions": true
+  },
+  "command": "initialize",
+  "request_seq": 1,
+  "seq": 0,
+  "success": true,
+  "type": "response"
+}
+-->
+Content-Length: 306
+
+{
+  "arguments": {
+    "__configurationTarget": 6,
+    "__sessionId": "6d73aaa6-776a-480d-97d3-ee9d7ee56720",
+    "args": [],
+    "cwd": "/home/anth/developer/zed-debugger",
+    "env": [],
+    "name": "Debug",
+    "program": "/home/anth/developer/zed-debugger/main.out",
+    "request": "launch",
+    "type": "lldb-dap"
+  },
+  "command": "launch",
+  "seq": 2,
+  "type": "request"
+}
+<--
+Content-Length: 77
+
+{
+  "command": "launch",
+  "request_seq": 2,
+  "seq": 0,
+  "success": true,
+  "type": "response"
+}
+<--
+Content-Length: 173
+
+{
+  "body": {
+    "isLocalProcess": true,
+    "name": "/home/anth/developer/zed-debugger/main.out",
+    "startMethod": "launch",
+    "systemProcessId": 174378
+  },
+  "event": "process",
+  "seq": 0,
+  "type": "event"
+}
+<--
+Content-Length: 46
+
+{
+  "event": "initialized",
+  "seq": 0,
+  "type": "event"
+}
+-->
+Content-Length: 206
+
+{
+  "arguments": {
+    "breakpoints": [
+      {
+        "line": 6
+      }
+    ],
+    "lines": [
+      6
+    ],
+    "source": {
+      "name": "main.c",
+      "path": "/home/anth/developer/zed-debugger/main.c"
+    },
+    "sourceModified": false
+  },
+  "command": "setBreakpoints",
+  "seq": 3,
+  "type": "request"
+}
+<--
+Content-Length: 273
+
+{
+  "body": {
+    "breakpoints": [
+      {
+        "column": 12,
+        "id": 1,
+        "instructionReference": "0x555555555124",
+        "line": 6,
+        "source": {
+          "name": "main.c",
+          "path": "/home/anth/developer/zed-debugger/main.c"
+        },
+        "verified": true
+      }
+    ]
+  },
+  "command": "setBreakpoints",
+  "request_seq": 3,
+  "seq": 0,
+  "success": true,
+  "type": "response"
+}
+-->
+Content-Length: 229
+
+{
+  "arguments": {
+    "breakpoints": [
+      {
+        "line": 16
+      },
+      {
+        "line": 19
+      }
+    ],
+    "lines": [
+      16,
+      19
+    ],
+    "source": {
+      "name": "main.rs",
+      "path": "/home/anth/developer/zed-debugger/src/main.rs"
+    },
+    "sourceModified": false
+  },
+  "command": "setBreakpoints",
+  "seq": 4,
+  "type": "request"
+}
+<--
+Content-Length: 348
+
+{
+  "body": {
+    "breakpoints": [
+      {
+        "id": 2,
+        "line": 16,
+        "source": {
+          "name": "main.rs",
+          "path": "/home/anth/developer/zed-debugger/src/main.rs"
+        },
+        "verified": false
+      },
+      {
+        "id": 3,
+        "line": 19,
+        "source": {
+          "name": "main.rs",
+          "path": "/home/anth/developer/zed-debugger/src/main.rs"
+        },
+        "verified": false
+      }
+    ]
+  },
+  "command": "setBreakpoints",
+  "request_seq": 4,
+  "seq": 0,
+  "success": true,
+  "type": "response"
+}
+-->
+Content-Length: 92
+
+{
+  "arguments": {
+    "breakpoints": []
+  },
+  "command": "setFunctionBreakpoints",
+  "seq": 5,
+  "type": "request"
+}
+<--
+Content-Length: 119
+
+{
+  "body": {
+    "breakpoints": []
+  },
+  "command": "setFunctionBreakpoints",
+  "request_seq": 5,
+  "seq": 0,
+  "success": true,
+  "type": "response"
+}
+-->
+Content-Length: 89
+
+{
+  "arguments": {
+    "filters": []
+  },
+  "command": "setExceptionBreakpoints",
+  "seq": 6,
+  "type": "request"
+}
+<--
+Content-Length: 94
+
+{
+  "command": "setExceptionBreakpoints",
+  "request_seq": 6,
+  "seq": 0,
+  "success": true,
+  "type": "response"
+}
+-->
+Content-Length: 56
+
+{
+  "command": "configurationDone",
+  "seq": 7,
+  "type": "request"
+}
+<--
+Content-Length: 88
+
+{
+  "command": "configurationDone",
+  "request_seq": 7,
+  "seq": 0,
+  "success": true,
+  "type": "response"
+}
+-->
+Content-Length: 46
+
+{
+  "command": "threads",
+  "seq": 8,
+  "type": "request"
+}
+<--
+Content-Length: 131
+
+{
+  "body": {
+    "threads": [
+      {
+        "id": 174378,
+        "name": "Thread 1"
+      }
+    ]
+  },
+  "command": "threads",
+  "request_seq": 8,
+  "seq": 0,
+  "success": true,
+  "type": "response"
+}
+<--
+Content-Length: 221
+
+{
+  "body": {
+    "allThreadsStopped": true,
+    "description": "breakpoint 1.1",
+    "hitBreakpointIds": [
+      1
+    ],
+    "preserveFocusHint": false,
+    "reason": "breakpoint",
+    "threadCausedFocus": true,
+    "threadId": 174378
+  },
+  "event": "stopped",
+  "seq": 0,
+  "type": "event"
+}
+-->
+Content-Length: 46
+
+{
+  "command": "threads",
+  "seq": 9,
+  "type": "request"
+}
+<--
+Content-Length: 131
+
+{
+  "body": {
+    "threads": [
+      {
+        "id": 174378,
+        "name": "main.out"
+      }
+    ]
+  },
+  "command": "threads",
+  "request_seq": 9,
+  "seq": 0,
+  "success": true,
+  "type": "response"
+}
+-->
+Content-Length: 108
+
+{
+  "arguments": {
+    "levels": 1,
+    "startFrame": 0,
+    "threadId": 174378
+  },
+  "command": "stackTrace",
+  "seq": 10,
+  "type": "request"
+}
+<--
+Content-Length: 296
+
+{
+  "body": {
+    "stackFrames": [
+      {
+        "column": 12,
+        "id": 524288,
+        "instructionPointerReference": "0x555555555124",
+        "line": 6,
+        "name": "main",
+        "source": {
+          "name": "main.c",
+          "path": "/home/anth/developer/zed-debugger/main.c"
+        }
+      }
+    ],
+    "totalFrames": 4
+  },
+  "command": "stackTrace",
+  "request_seq": 10,
+  "seq": 0,
+  "success": true,
+  "type": "response"
+}
+-->
+Content-Length: 77
+
+{
+  "arguments": {
+    "frameId": 524288
+  },
+  "command": "scopes",
+  "seq": 11,
+  "type": "request"
+}
+<--
+Content-Length: 395
+
+{
+  "body": {
+    "scopes": [
+      {
+        "expensive": false,
+        "name": "Locals",
+        "namedVariables": 1,
+        "presentationHint": "locals",
+        "variablesReference": 1
+      },
+      {
+        "expensive": false,
+        "name": "Globals",
+        "namedVariables": 0,
+        "variablesReference": 2
+      },
+      {
+        "expensive": false,
+        "name": "Registers",
+        "namedVariables": 3,
+        "presentationHint": "registers",
+        "variablesReference": 3
+      }
+    ]
+  },
+  "command": "scopes",
+  "request_seq": 11,
+  "seq": 0,
+  "success": true,
+  "type": "response"
+}
+-->
+Content-Length: 86
+
+{
+  "arguments": {
+    "variablesReference": 1
+  },
+  "command": "variables",
+  "seq": 12,
+  "type": "request"
+}
+<--
+Content-Length: 313
+
+{
+  "body": {
+    "variables": [
+      {
+        "$__lldb_extensions": {
+          "declaration": {
+            "column": 9,
+            "line": 4,
+            "path": "/home/anth/developer/zed-debugger/main.c"
+          },
+          "value": "1"
+        },
+        "evaluateName": "x",
+        "id": -1,
+        "name": "x",
+        "type": "int",
+        "value": "1",
+        "variablesReference": 0
+      }
+    ]
+  },
+  "command": "variables",
+  "request_seq": 12,
+  "seq": 0,
+  "success": true,
+  "type": "response"
+}
+-->
+Content-Length: 109
+
+{
+  "arguments": {
+    "levels": 19,
+    "startFrame": 1,
+    "threadId": 174378
+  },
+  "command": "stackTrace",
+  "seq": 13,
+  "type": "request"
+}
+<--
+Content-Length: 529
+
+{
+  "body": {
+    "stackFrames": [
+      {
+        "column": 0,
+        "id": 524289,
+        "instructionPointerReference": "0x7FFFF7DCEE08",
+        "line": 0,
+        "name": "___lldb_unnamed_symbol3261",
+        "presentationHint": "subtle"
+      },
+      {
+        "column": 0,
+        "id": 524290,
+        "instructionPointerReference": "0x7FFFF7DCEECC",
+        "line": 0,
+        "name": "__libc_start_main",
+        "presentationHint": "subtle"
+      },
+      {
+        "column": 0,
+        "id": 524291,
+        "instructionPointerReference": "0x555555555045",
+        "line": 0,
+        "name": "_start",
+        "presentationHint": "subtle"
+      }
+    ],
+    "totalFrames": 4
+  },
+  "command": "stackTrace",
+  "request_seq": 13,
+  "seq": 0,
+  "success": true,
+  "type": "response"
+}
+                                                          -->
+Content-Length: 105
+
+{
+  "arguments": {
+    "restart": false,
+    "terminateDebuggee": true
+  },
+  "command": "disconnect",
+  "seq": 14,
+  "type": "request"
+}
+<--
+Content-Length: 63
+
+{
+  "body": {
+    "exitCode": 9
+  },
+  "event": "exited",
+  "seq": 0,
+  "type": "event"
+}
+<--
+Content-Length: 3726
+
+{
+  "event": "terminated",
+  "seq": 0,
+  "statistics": {
+    "memory": "{\"strings\":{\"bytesTotal\":1048576,\"bytesUnused\":937466,\"bytesUsed\":111110}}",
+    "targets": "[{\"breakpoints\":[{\"details\":{\"Breakpoint\":{\"BKPTOptions\":{\"AutoContinue\":false,\"ConditionText\":\"\",\"EnabledState\":true,\"IgnoreCount\":0,\"OneShotState\":false},\"BKPTResolver\":{\"Options\":{\"Column\":0,\"Exact\":false,\"FileName\":\"/home/anth/developer/zed-debugger/main.c\",\"Inlines\":true,\"LineNumber\":6,\"Offset\":0,\"SkipPrologue\":true},\"Type\":\"FileAndLine\"},\"Hardware\":false,\"Names\":[\"dap\"],\"SearchFilter\":{\"Options\":{},\"Type\":\"Unconstrained\"}}},\"hitCount\":1,\"id\":1,\"internal\":false,\"numLocations\":1,\"numResolvedLocations\":1,\"resolveTime\":0.00034600000000000001},{\"details\":{\"Breakpoint\":{\"BKPTOptions\":{\"AutoContinue\":false,\"ConditionText\":\"\",\"EnabledState\":true,\"IgnoreCount\":0,\"OneShotState\":false},\"BKPTResolver\":{\"Options\":{\"Column\":0,\"Exact\":false,\"FileName\":\"/home/anth/developer/zed-debugger/src/main.rs\",\"Inlines\":true,\"LineNumber\":16,\"Offset\":0,\"SkipPrologue\":true},\"Type\":\"FileAndLine\"},\"Hardware\":false,\"Names\":[\"dap\"],\"SearchFilter\":{\"Options\":{},\"Type\":\"Unconstrained\"}}},\"hitCount\":0,\"id\":2,\"internal\":false,\"numLocations\":0,\"numResolvedLocations\":0,\"resolveTime\":9.9999999999999995e-07},{\"details\":{\"Breakpoint\":{\"BKPTOptions\":{\"AutoContinue\":false,\"ConditionText\":\"\",\"EnabledState\":true,\"IgnoreCount\":0,\"OneShotState\":false},\"BKPTResolver\":{\"Options\":{\"Column\":0,\"Exact\":false,\"FileName\":\"/home/anth/developer/zed-debugger/src/main.rs\",\"Inlines\":true,\"LineNumber\":19,\"Offset\":0,\"SkipPrologue\":true},\"Type\":\"FileAndLine\"},\"Hardware\":false,\"Names\":[\"dap\"],\"SearchFilter\":{\"Options\":{},\"Type\":\"Unconstrained\"}}},\"hitCount\":0,\"id\":3,\"internal\":false,\"numLocations\":0,\"numResolvedLocations\":0,\"resolveTime\":0},{\"details\":{\"Breakpoint\":{\"BKPTOptions\":{\"AutoContinue\":false,\"ConditionText\":\"\",\"EnabledState\":true,\"IgnoreCount\":0,\"OneShotState\":false},\"BKPTResolver\":{\"Options\":{\"Language\":\"c\",\"NameMask\":[4,4,4,4,4,4],\"Offset\":0,\"SkipPrologue\":false,\"SymbolNames\":[\"_dl_debug_state\",\"rtld_db_dlactivity\",\"__dl_rtld_db_dlactivity\",\"r_debug_state\",\"_r_debug_state\",\"_rtld_debug_state\"]},\"Type\":\"SymbolName\"},\"Hardware\":false,\"SearchFilter\":{\"Options\":{\"ModuleList\":[\"/usr/lib/ld-linux-x86-64.so.2\"]},\"Type\":\"Modules\"}}},\"hitCount\":2,\"id\":-1,\"internal\":true,\"kindDescription\":\"shared-library-event\",\"numLocations\":1,\"numResolvedLocations\":1,\"resolveTime\":4.3000000000000002e-05}],\"expressionEvaluation\":{\"failures\":0,\"successes\":0},\"firstStopTime\":0.030545381,\"frameVariable\":{\"failures\":0,\"successes\":0},\"launchOrAttachTime\":0.029546948,\"moduleIdentifiers\":[105883946732624,105883946901136,105883947939120,128074314196112],\"signals\":[{\"SIGSTOP\":1}],\"sourceMapDeduceCount\":0,\"stopCount\":7,\"targetCreateTime\":5.5000000000000002e-05,\"totalBreakpointResolveTime\":0.00039000000000000005}]",
+    "totalDebugInfoByteSize": 14708,
+    "totalDebugInfoEnabled": 1,
+    "totalDebugInfoIndexLoadedFromCache": 0,
+    "totalDebugInfoIndexSavedToCache": 0,
+    "totalDebugInfoIndexTime": 0.00020599999999999999,
+    "totalDebugInfoParseTime": 2.6999999999999999e-05,
+    "totalModuleCount": 4,
+    "totalModuleCountHasDebugInfo": 1,
+    "totalModuleCountWithIncompleteTypes": 0,
+    "totalModuleCountWithVariableErrors": 0,
+    "totalSymbolTableIndexTime": 0.00029399999999999999,
+    "totalSymbolTableParseTime": 0.0042420000000000001,
+    "totalSymbolTableStripped": 0,
+    "totalSymbolTablesLoadedFromCache": 0,
+    "totalSymbolTablesSavedToCache": 0
+  },
+  "type": "event"
+}
+<--
+Content-Length: 82
+
+{
+  "command": "disconnect",
+  "request_seq": 14,
+  "seq": 0,
+  "success": true,
+  "type": "response"
+}

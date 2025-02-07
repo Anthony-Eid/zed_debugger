@@ -1,0 +1,6 @@
+/target
+.repoproject/*
+.venv
+.venv/*
+.venv/
+.venv/**/*

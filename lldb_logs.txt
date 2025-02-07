@@ -1,0 +1,937 @@
+1738669789.655213118 --> 
+Content-Length: 543
+
+{
+  "arguments": {
+    "adapterID": "lldb-dap",
+    "clientID": "vscode",
+    "clientName": "Visual Studio Code",
+    "columnsStartAt1": true,
+    "linesStartAt1": true,
+    "locale": "en",
+    "pathFormat": "path",
+    "supportsANSIStyling": true,
+    "supportsArgsCanBeInterpretedByShell": true,
+    "supportsInvalidatedEvent": true,
+    "supportsMemoryEvent": true,
+    "supportsMemoryReferences": true,
+    "supportsProgressReporting": true,
+    "supportsRunInTerminalRequest": true,
+    "supportsStartDebuggingRequest": true,
+    "supportsVariablePaging": true,
+    "supportsVariableType": true
+  },
+  "command": "initialize",
+  "seq": 1,
+  "type": "request"
+}
+1738669789.657107115 <-- 
+Content-Length: 1592
+
+{
+  "body": {
+    "__lldb": {
+      "version": "lldb version 20.0.0git (git@github.com:Anthony-Eid/llvm-project.git revision 0b7aaed3da01adb6c1e1fa0d7836ca36bc1842da)\n  clang revision 0b7aaed3da01adb6c1e1fa0d7836ca36bc1842da\n  llvm revision 0b7aaed3da01adb6c1e1fa0d7836ca36bc1842da"
+    },
+    "completionTriggerCharacters": [
+      ".",
+      " ",
+      "\t"
+    ],
+    "exceptionBreakpointFilters": [
+      {
+        "default": false,
+        "filter": "cpp_catch",
+        "label": "C++ Catch"
+      },
+      {
+        "default": false,
+        "filter": "cpp_throw",
+        "label": "C++ Throw"
+      },
+      {
+        "default": false,
+        "filter": "objc_catch",
+        "label": "Objective-C Catch"
+      },
+      {
+        "default": false,
+        "filter": "objc_throw",
+        "label": "Objective-C Throw"
+      }
+    ],
+    "supportTerminateDebuggee": true,
+    "supportsCompletionsRequest": true,
+    "supportsConditionalBreakpoints": true,
+    "supportsConfigurationDoneRequest": true,
+    "supportsDataBreakpoints": true,
+    "supportsDelayedStackTraceLoading": true,
+    "supportsDisassembleRequest": true,
+    "supportsEvaluateForHovers": true,
+    "supportsExceptionInfoRequest": true,
+    "supportsExceptionOptions": true,
+    "supportsFunctionBreakpoints": true,
+    "supportsGotoTargetsRequest": false,
+    "supportsHitConditionalBreakpoints": true,
+    "supportsInstructionBreakpoints": true,
+    "supportsLoadedSourcesRequest": false,
+    "supportsLogPoints": true,
+    "supportsModulesRequest": true,
+    "supportsProgressReporting": true,
+    "supportsReadMemoryRequest": true,
+    "supportsRestartFrame": false,
+    "supportsRestartRequest": true,
+    "supportsRunInTerminalRequest": true,
+    "supportsSetVariable": true,
+    "supportsStepBack": false,
+    "supportsStepInTargetsRequest": true,
+    "supportsSteppingGranularity": true,
+    "supportsValueFormattingOptions": true
+  },
+  "command": "initialize",
+  "request_seq": 1,
+  "seq": 0,
+  "success": true,
+  "type": "response"
+}
+1738669789.657905102 --> 
+Content-Length: 3300
+
+{
+  "arguments": {
+    "__sessionId": "a800c887-b5d9-44a7-8ab8-8330d9d322d7",
+    "args": [
+      "tests::debug_panel_tests::test_variable_list",
+      "--exact",
+      "--show-output"
+    ],
+    "cwd": "/Users/eid/Developer/zed/crates/collab",
+    "env": [
+      "RUST_BACKTRACE=short",
+      "BUN_INSTALL=/Users/eid/.bun",
+      "COMMAND_MODE=unix2003",
+      "EDITOR=nano",
+      "GOPATH=/Users/eid/go",
+      "HOME=/Users/eid",
+      "HOMEBREW_CELLAR=/opt/homebrew/Cellar",
+      "HOMEBREW_PREFIX=/opt/homebrew",
+      "HOMEBREW_REPOSITORY=/opt/homebrew",
+      "IDF_PATH=/Users/eid/toolchains/esp/esp-idf",
+      "INFOPATH=/opt/homebrew/share/info:",
+      "LESS=-R",
+      "LOGNAME=eid",
+      "LSCOLORS=Gxfxcxdxbxegedabagacad",
+      "LS_COLORS=di=1;36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43",
+      "MallocNanoZone=0",
+      "NIX_PATH=nixpkgs=flake:nixpkgs:/nix/var/nix/profiles/per-user/root/channels",
+      "NIX_PROFILES=/nix/var/nix/profiles/default /run/current-system/sw /Users/eid/.nix-profile",
+      "NIX_REMOTE=daemon",
+      "NIX_SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt",
+      "NIX_USER_PROFILE_DIR=/nix/var/nix/profiles/per-user/eid",
+      "OLDPWD=/",
+      "ORIGINAL_XDG_CURRENT_DESKTOP=undefined",
+      "PAGER=less -R",
+      "PATH=/Users/eid/.bun/bin:/Library/Frameworks/Python.framework/Versions/3.11/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/eid/.cargo/bin:/Users/eid/.nix-profile/bin:/run/current-system/sw/bin:/nix/var/nix/profiles/default/bin:/usr/local/bin:/usr/bin:/usr/sbin:/bin:/sbin:/usr/local/go/bin:/Users/eid/go/bin",
+      "PWD=/",
+      "SHELL=/bin/zsh",
+      "SHLVL=0",
+      "SSH_AUTH_SOCK=/private/tmp/com.apple.launchd.VmKw4OLagJ/Listeners",
+      "TERMINFO_DIRS=/Users/eid/.nix-profile/share/terminfo:/run/current-system/sw/share/terminfo:/nix/var/nix/profiles/default/share/terminfo:/usr/share/terminfo",
+      "TMPDIR=/var/folders/fq/wc1rpqwx3zq603rcf2sb5j600000gn/T/",
+      "USER=eid",
+      "VSCODE_CODE_CACHE_PATH=/Users/eid/Library/Application Support/Code/CachedData/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba",
+      "VSCODE_CRASH_REPORTER_PROCESS_TYPE=extensionHost",
+      "VSCODE_CWD=/",
+      "VSCODE_ESM_ENTRYPOINT=vs/workbench/api/node/extensionHostProcess",
+      "VSCODE_HANDLES_UNCAUGHT_ERRORS=true",
+      "VSCODE_IPC_HOOK=/Users/eid/Library/Application Support/Code/1.96-main.sock",
+      "VSCODE_NLS_CONFIG={\"userLocale\":\"en-us\",\"osLocale\":\"en-us\",\"resolvedLanguage\":\"en\",\"defaultMessagesFile\":\"/Applications/Visual Studio Code.app/Contents/Resources/app/out/nls.messages.json\",\"locale\":\"en-us\",\"availableLanguages\":{}}",
+      "VSCODE_PID=99078",
+      "XDG_CONFIG_DIRS=/Users/eid/.nix-profile/etc/xdg:/run/current-system/sw/etc/xdg:/nix/var/nix/profiles/default/etc/xdg",
+      "XDG_DATA_DIRS=/Users/eid/.nix-profile/share:/run/current-system/sw/share:/nix/var/nix/profiles/default/share",
+      "XPC_FLAGS=0x0",
+      "XPC_SERVICE_NAME=application.com.microsoft.VSCode.74884166.74884172",
+      "ZSH=/Users/eid/.oh-my-zsh",
+      "_=/Applications/Visual Studio Code.app/Contents/MacOS/Electron",
+      "__CFBundleIdentifier=com.microsoft.VSCode",
+      "__CF_USER_TEXT_ENCODING=0x1F5:0x0:0x0",
+      "__NIX_DARWIN_SET_ENVIRONMENT_DONE=1",
+      "ELECTRON_RUN_AS_NODE=1",
+      "APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL=1",
+      "APPLICATIONINSIGHTS_CONFIGURATION_CONTENT={}",
+      "RUSTC_TOOLCHAIN=/Users/eid/.rustup/toolchains/1.81-aarch64-apple-darwin"
+    ],
+    "name": "test tests::debug_panel_tests::test_variable_list",
+    "program": "/Users/eid/Developer/zed/target/debug/deps/collab-2f52e42706e1d5d6",
+    "request": "launch",
+    "type": "lldb-dap"
+  },
+  "command": "launch",
+  "seq": 2,
+  "type": "request"
+}
+1738669795.247262001 <-- 
+Content-Length: 77
+
+{
+  "command": "launch",
+  "request_seq": 2,
+  "seq": 0,
+  "success": true,
+  "type": "response"
+}
+1738669795.247308016 <-- 
+Content-Length: 194
+
+{
+  "body": {
+    "isLocalProcess": true,
+    "name": "/Users/eid/Developer/zed/target/debug/deps/collab-2f52e42706e1d5d6",
+    "startMethod": "launch",
+    "systemProcessId": 958
+  },
+  "event": "process",
+  "seq": 0,
+  "type": "event"
+}
+1738669795.247322083 <-- 
+Content-Length: 46
+
+{
+  "event": "initialized",
+  "seq": 0,
+  "type": "event"
+}
+1738669795.312160969 --> 
+Content-Length: 260
+
+{
+  "arguments": {
+    "breakpoints": [
+      {
+        "line": 286
+      },
+      {
+        "line": 307
+      },
+      {
+        "line": 347
+      }
+    ],
+    "lines": [
+      286,
+      307,
+      347
+    ],
+    "source": {
+      "name": "adapters.rs",
+      "path": "/Users/eid/Developer/zed/crates/dap/src/adapters.rs"
+    },
+    "sourceModified": false
+  },
+  "command": "setBreakpoints",
+  "seq": 3,
+  "type": "request"
+}
+1738669796.350272894 <-- 
+Content-Length: 548
+
+{
+  "body": {
+    "breakpoints": [
+      {
+        "id": 1,
+        "line": 286,
+        "source": {
+          "name": "adapters.rs",
+          "path": "/Users/eid/Developer/zed/crates/dap/src/adapters.rs"
+        },
+        "verified": false
+      },
+      {
+        "id": 2,
+        "line": 307,
+        "source": {
+          "name": "adapters.rs",
+          "path": "/Users/eid/Developer/zed/crates/dap/src/adapters.rs"
+        },
+        "verified": false
+      },
+      {
+        "column": 33,
+        "id": 3,
+        "instructionReference": "0x104465628",
+        "line": 347,
+        "source": {
+          "name": "adapters.rs",
+          "path": "/Users/eid/Developer/zed/crates/dap/src/adapters.rs"
+        },
+        "verified": true
+      }
+    ]
+  },
+  "command": "setBreakpoints",
+  "request_seq": 3,
+  "seq": 0,
+  "success": true,
+  "type": "response"
+}
+1738669796.350753069 --> 
+Content-Length: 255
+
+{
+  "arguments": {
+    "breakpoints": [
+      {
+        "line": 1349
+      }
+    ],
+    "lines": [
+      1349
+    ],
+    "source": {
+      "name": "debug_panel_tests.rs",
+      "path": "/Users/eid/Developer/zed/crates/collab/src/tests/debug_panel_tests.rs"
+    },
+    "sourceModified": false
+  },
+  "command": "setBreakpoints",
+  "seq": 4,
+  "type": "request"
+}
+1738669796.457052946 <-- 
+Content-Length: 316
+
+{
+  "body": {
+    "breakpoints": [
+      {
+        "column": 20,
+        "id": 4,
+        "instructionReference": "0x100BCE698",
+        "line": 1349,
+        "source": {
+          "name": "debug_panel_tests.rs",
+          "path": "/Users/eid/Developer/zed/crates/collab/src/tests/debug_panel_tests.rs"
+        },
+        "verified": true
+      }
+    ]
+  },
+  "command": "setBreakpoints",
+  "request_seq": 4,
+  "seq": 0,
+  "success": true,
+  "type": "response"
+}
+1738669796.457099915 --> 
+Content-Length: 269
+
+{
+  "arguments": {
+    "breakpoints": [
+      {
+        "line": 140
+      },
+      {
+        "line": 158
+      }
+    ],
+    "lines": [
+      140,
+      158
+    ],
+    "source": {
+      "name": "debugger_panel.rs",
+      "path": "/Users/eid/Developer/zed/crates/debugger_ui/src/tests/debugger_panel.rs"
+    },
+    "sourceModified": false
+  },
+  "command": "setBreakpoints",
+  "seq": 5,
+  "type": "request"
+}
+1738669796.465306997 <-- 
+Content-Length: 422
+
+{
+  "body": {
+    "breakpoints": [
+      {
+        "id": 5,
+        "line": 140,
+        "source": {
+          "name": "debugger_panel.rs",
+          "path": "/Users/eid/Developer/zed/crates/debugger_ui/src/tests/debugger_panel.rs"
+        },
+        "verified": false
+      },
+      {
+        "id": 6,
+        "line": 158,
+        "source": {
+          "name": "debugger_panel.rs",
+          "path": "/Users/eid/Developer/zed/crates/debugger_ui/src/tests/debugger_panel.rs"
+        },
+        "verified": false
+      }
+    ]
+  },
+  "command": "setBreakpoints",
+  "request_seq": 5,
+  "seq": 0,
+  "success": true,
+  "type": "response"
+}
+1738669796.465348005 --> 
+Content-Length: 245
+
+{
+  "arguments": {
+    "breakpoints": [
+      {
+        "line": 165
+      }
+    ],
+    "lines": [
+      165
+    ],
+    "source": {
+      "name": "dispatcher.rs",
+      "path": "/Users/eid/Developer/zed/crates/gpui/src/platform/test/dispatcher.rs"
+    },
+    "sourceModified": false
+  },
+  "command": "setBreakpoints",
+  "seq": 6,
+  "type": "request"
+}
+1738669796.489203930 <-- 
+Content-Length: 307
+
+{
+  "body": {
+    "breakpoints": [
+      {
+        "column": 28,
+        "id": 7,
+        "instructionReference": "0x10632A3E8",
+        "line": 165,
+        "source": {
+          "name": "dispatcher.rs",
+          "path": "/Users/eid/Developer/zed/crates/gpui/src/platform/test/dispatcher.rs"
+        },
+        "verified": true
+      }
+    ]
+  },
+  "command": "setBreakpoints",
+  "request_seq": 6,
+  "seq": 0,
+  "success": true,
+  "type": "response"
+}
+1738669796.489283085 --> 
+Content-Length: 246
+
+{
+  "arguments": {
+    "breakpoints": [
+      {
+        "line": 1281
+      },
+      {
+        "line": 4683
+      }
+    ],
+    "lines": [
+      1281,
+      4683
+    ],
+    "source": {
+      "name": "editor.rs",
+      "path": "/Users/eid/Developer/zed/crates/editor/src/editor.rs"
+    },
+    "sourceModified": false
+  },
+  "command": "setBreakpoints",
+  "seq": 7,
+  "type": "request"
+}
+1738669796.800396919 <-- 
+Content-Length: 466
+
+{
+  "body": {
+    "breakpoints": [
+      {
+        "column": 33,
+        "id": 8,
+        "instructionReference": "0x1027760D8",
+        "line": 1282,
+        "source": {
+          "name": "editor.rs",
+          "path": "/Users/eid/Developer/zed/crates/editor/src/editor.rs"
+        },
+        "verified": true
+      },
+      {
+        "column": 13,
+        "id": 9,
+        "instructionReference": "0x1027857F0",
+        "line": 4686,
+        "source": {
+          "name": "editor.rs",
+          "path": "/Users/eid/Developer/zed/crates/editor/src/editor.rs"
+        },
+        "verified": true
+      }
+    ]
+  },
+  "command": "setBreakpoints",
+  "request_seq": 7,
+  "seq": 0,
+  "success": true,
+  "type": "response"
+}
+1738669796.800482035 --> 
+Content-Length: 215
+
+{
+  "arguments": {
+    "breakpoints": [],
+    "lines": [],
+    "source": {
+      "name": "github.rs",
+      "path": "/Users/eid/Developer/zed/crates/http_client/src/github.rs"
+    },
+    "sourceModified": false
+  },
+  "command": "setBreakpoints",
+  "seq": 8,
+  "type": "request"
+}
+1738669796.800512075 <-- 
+Content-Length: 111
+
+{
+  "body": {
+    "breakpoints": []
+  },
+  "command": "setBreakpoints",
+  "request_seq": 8,
+  "seq": 0,
+  "success": true,
+  "type": "response"
+}
+1738669796.800525904 --> 
+Content-Length: 339
+
+{
+  "arguments": {
+    "breakpoints": [
+      {
+        "line": 2224
+      },
+      {
+        "line": 2235,
+        "logMessage": "In `open_path`"
+      },
+      {
+        "line": 2255,
+        "logMessage": "File path has been opened"
+      }
+    ],
+    "lines": [
+      2224,
+      2235,
+      2255
+    ],
+    "source": {
+      "name": "project.rs",
+      "path": "/Users/eid/Developer/zed/crates/project/src/project.rs"
+    },
+    "sourceModified": false
+  },
+  "command": "setBreakpoints",
+  "seq": 9,
+  "type": "request"
+}
+1738669797.034365892 <-- 
+Content-Length: 655
+
+{
+  "body": {
+    "breakpoints": [
+      {
+        "column": 6,
+        "id": 10,
+        "instructionReference": "0x103BFD6EC",
+        "line": 2224,
+        "source": {
+          "name": "project.rs",
+          "path": "/Users/eid/Developer/zed/crates/project/src/project.rs"
+        },
+        "verified": true
+      },
+      {
+        "column": 44,
+        "id": 11,
+        "instructionReference": "0x1039B07A0",
+        "line": 2235,
+        "source": {
+          "name": "project.rs",
+          "path": "/Users/eid/Developer/zed/crates/project/src/project.rs"
+        },
+        "verified": true
+      },
+      {
+        "column": 37,
+        "id": 12,
+        "instructionReference": "0x103BFD778",
+        "line": 2257,
+        "source": {
+          "name": "project.rs",
+          "path": "/Users/eid/Developer/zed/crates/project/src/project.rs"
+        },
+        "verified": true
+      }
+    ]
+  },
+  "command": "setBreakpoints",
+  "request_seq": 9,
+  "seq": 0,
+  "success": true,
+  "type": "response"
+}
+1738669797.034466982 --> 
+Content-Length: 287
+
+{
+  "arguments": {
+    "breakpoints": [
+      {
+        "line": 4150,
+        "logMessage": "{serialized_workspace.breakpoints}"
+      }
+    ],
+    "lines": [
+      4150
+    ],
+    "source": {
+      "name": "workspace.rs",
+      "path": "/Users/eid/Developer/zed/crates/workspace/src/workspace.rs"
+    },
+    "sourceModified": false
+  },
+  "command": "setBreakpoints",
+  "seq": 10,
+  "type": "request"
+}
+1738669797.175028086 <-- 
+Content-Length: 299
+
+{
+  "body": {
+    "breakpoints": [
+      {
+        "column": 43,
+        "id": 13,
+        "instructionReference": "0x102E6F3B0",
+        "line": 4150,
+        "source": {
+          "name": "workspace.rs",
+          "path": "/Users/eid/Developer/zed/crates/workspace/src/workspace.rs"
+        },
+        "verified": true
+      }
+    ]
+  },
+  "command": "setBreakpoints",
+  "request_seq": 10,
+  "seq": 0,
+  "success": true,
+  "type": "response"
+}
+1738669797.175084114 --> 
+Content-Length: 93
+
+{
+  "arguments": {
+    "breakpoints": []
+  },
+  "command": "setFunctionBreakpoints",
+  "seq": 11,
+  "type": "request"
+}
+1738669797.175107002 <-- 
+Content-Length: 120
+
+{
+  "body": {
+    "breakpoints": []
+  },
+  "command": "setFunctionBreakpoints",
+  "request_seq": 11,
+  "seq": 0,
+  "success": true,
+  "type": "response"
+}
+1738669797.175118923 --> 
+Content-Length: 96
+
+{
+  "arguments": {
+    "breakpoints": []
+  },
+  "command": "setInstructionBreakpoints",
+  "seq": 12,
+  "type": "request"
+}
+1738669797.175313950 <-- 
+Content-Length: 123
+
+{
+  "body": {
+    "breakpoints": []
+  },
+  "command": "setInstructionBreakpoints",
+  "request_seq": 12,
+  "seq": 0,
+  "success": true,
+  "type": "response"
+}
+1738669797.175358057 --> 
+Content-Length: 90
+
+{
+  "arguments": {
+    "filters": []
+  },
+  "command": "setExceptionBreakpoints",
+  "seq": 13,
+  "type": "request"
+}
+1738669797.175384045 <-- 
+Content-Length: 95
+
+{
+  "command": "setExceptionBreakpoints",
+  "request_seq": 13,
+  "seq": 0,
+  "success": true,
+  "type": "response"
+}
+1738669797.175396919 --> 
+Content-Length: 89
+
+{
+  "arguments": {
+    "breakpoints": []
+  },
+  "command": "setDataBreakpoints",
+  "seq": 14,
+  "type": "request"
+}
+1738669797.175422907 <-- 
+Content-Length: 116
+
+{
+  "body": {
+    "breakpoints": []
+  },
+  "command": "setDataBreakpoints",
+  "request_seq": 14,
+  "seq": 0,
+  "success": true,
+  "type": "response"
+}
+1738669797.180412054 --> 
+Content-Length: 57
+
+{
+  "command": "configurationDone",
+  "seq": 15,
+  "type": "request"
+}
+1738669797.180468082 <-- 
+Content-Length: 89
+
+{
+  "command": "configurationDone",
+  "request_seq": 15,
+  "seq": 0,
+  "success": true,
+  "type": "response"
+}
+1738669797.180716991 <-- 
+Content-Length: 227
+
+{
+  "body": {
+    "category": "stderr",
+    "output": "PLEASE submit a bug report to https://github.com/llvm/llvm-project/issues/ and include the crash report from ~/Library/Logs/DiagnosticReports/.\n"
+  },
+  "event": "output",
+  "seq": 0,
+  "type": "event"
+}
+1738669797.180851936 --> 
+Content-Length: 47
+
+{
+  "command": "threads",
+  "seq": 16,
+  "type": "request"
+}
+1738669797.180928946 <-- 
+Content-Length: 133
+
+{
+  "body": {
+    "threads": [
+      {
+        "id": 4120878,
+        "name": "Thread 1"
+      }
+    ]
+  },
+  "command": "threads",
+  "request_seq": 16,
+  "seq": 0,
+  "success": true,
+  "type": "response"
+}
+1738669797.272166014 <-- 
+Content-Length: 158
+
+{
+  "body": {
+    "category": "stderr",
+    "output": " #0 0x00000001006c000c llvm::sys::PrintStackTrace(llvm::raw_ostream&, int) ("
+  },
+  "event": "output",
+  "seq": 0,
+  "type": "event"
+}
+1738669797.272182941 <-- 
+Content-Length: 154
+
+{
+  "body": {
+    "category": "stderr",
+    "output": "/Users/eid/Developer/llvm-project/lldb/build/bin/lldb-dap+0x10005000c)\n"
+  },
+  "event": "output",
+  "seq": 0,
+  "type": "event"
+}
+1738669797.272192955 <-- 
+Content-Length: 209
+
+{
+  "body": {
+    "category": "stderr",
+    "output": " #1 0x00000001006be724 llvm::sys::RunSignalHandlers() (/Users/eid/Developer/llvm-project/lldb/build/bin/lldb-dap+0x10004e724)\n"
+  },
+  "event": "output",
+  "seq": 0,
+  "type": "event"
+}
+1738669797.272203922 <-- 
+Content-Length: 197
+
+{
+  "body": {
+    "category": "stderr",
+    "output": " #2 0x00000001006c0674 SignalHandler(int) (/Users/eid/Developer/llvm-project/lldb/build/bin/lldb-dap+0x100050674)\n"
+  },
+  "event": "output",
+  "seq": 0,
+  "type": "event"
+}
+1738669797.272213936 <-- 
+Content-Length: 161
+
+{
+  "body": {
+    "category": "stderr",
+    "output": " #3 0x0000000193106de4 (/usr/lib/system/libsystem_platform.dylib+0x180482de4)\n"
+  },
+  "event": "output",
+  "seq": 0,
+  "type": "event"
+}
+1738669797.272223949 <-- 
+Content-Length: 216
+
+{
+  "body": {
+    "category": "stderr",
+    "output": " #4 0x0000000109e3a134 lldb::SBValueList::Clear() (/Users/eid/Developer/llvm-project/lldb/build/lib/liblldb.20.0.0git.dylib+0xe2134)\n"
+  },
+  "event": "output",
+  "seq": 0,
+  "type": "event"
+}
+1738669797.272237062 <-- 
+Content-Length: 83
+
+{
+  "body": {
+    "category": "stderr",
+    "output": " "
+  },
+  "event": "output",
+  "seq": 0,
+  "type": "event"
+}
+1738669797.272249937 <-- 
+Content-Length: 206
+
+{
+  "body": {
+    "category": "stderr",
+    "output": "#5 0x00000001006a40c8 lldb_dap::Variables::Clear() (/Users/eid/Developer/llvm-project/lldb/build/bin/lldb-dap+0x1000340c8)\n"
+  },
+  "event": "output",
+  "seq": 0,
+  "type": "event"
+}
+1738669797.272263050 <-- 
+Content-Length: 237
+
+{
+  "body": {
+    "category": "stderr",
+    "output": " #6 0x0000000100688cc4 (anonymous namespace)::EventThreadFunction(lldb_dap::DAP&) (/Users/eid/Developer/llvm-project/lldb/build/bin/lldb-dap+0x100018cc4)\n"
+  },
+  "event": "output",
+  "seq": 0,
+  "type": "event"
+}
+1738669797.272288084 <-- 
+Content-Length: 419
+
+{
+  "body": {
+    "category": "stderr",
+    "output": " #7 0x0000000100689264 void* std::__1::__thread_proxy[abi:nn180100]<std::__1::tuple<std::__1::unique_ptr<std::__1::__thread_struct, std::__1::default_delete<std::__1::__thread_struct>>, void (*)(lldb_dap::DAP&), std::__1::reference_wrapper<lldb_dap::DAP>>>(void*) (/Users/eid/Developer/llvm-project/lldb/build/bin/lldb-dap+0x100019264)\n"
+  },
+  "event": "output",
+  "seq": 0,
+  "type": "event"
+}
+1738669797.272301912 <-- 
+Content-Length: 160
+
+{
+  "body": {
+    "category": "stderr",
+    "output": " #8 0x00000001930d02e4 (/usr/lib/system/libsystem_pthread.dylib+0x18044c2e4)\n"
+  },
+  "event": "output",
+  "seq": 0,
+  "type": "event"
+}
+1738669797.272315025 <-- 

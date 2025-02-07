@@ -1,0 +1,7 @@
+{
+  "dap": {
+    "lldb": {
+      "binary": "/Users/eid/Developer/llvm-project/lldb/build/bin/lldb-dap"
+    }
+  }
+}
