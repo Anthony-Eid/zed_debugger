@@ -4,4 +4,9 @@
         "command": "echo hello",
         "hooks": ["create_git_worktree"],
     },
+    {
+        "label": "sleep",
+        "command": "sleep 5",
+        "hooks": ["create_git_worktree"],
+    },
 ]
