@@ -1,0 +1,21 @@
+id,first_name,last_name,email,age,country,signup_date,is_active,account_balance,last_login
+1,Ava,Turner,ava.turner@example.com,29,USA,2024-01-14,true,1843.27,2025-03-01T09:14:22Z
+2,Liam,Patel,liam.patel@example.com,34,Canada,2023-11-02,false,245.90,2025-02-18T16:45:03Z
+3,Sophia,Nguyen,sophia.nguyen@example.com,41,UK,2022-07-19,true,9821.44,2025-03-20T11:02:17Z
+4,Noah,Rossi,noah.rossi@example.com,26,Italy,2024-06-08,true,73.12,2025-03-22T07:33:51Z
+5,Emma,Garcia,emma.garcia@example.com,37,Spain,2021-09-27,false,0.00,2024-12-30T21:09:44Z
+6,Oliver,Kim,oliver.kim@example.com,31,South Korea,2023-03-15,true,512.08,2025-03-19T05:48:29Z
+7,Isabella,Martin,isabella.martin@example.com,45,France,2020-12-05,true,12045.66,2025-03-10T13:27:40Z
+8,Elijah,Brown,elijah.brown@example.com,22,Australia,2024-08-11,true,15.75,2025-03-23T18:55:12Z
+9,Mia,Johnson,mia.johnson@example.com,39,Germany,2022-02-23,false,3301.50,2025-01-08T10:10:10Z
+10,James,Wilson,james.wilson@example.com,28,Ireland,2023-10-30,true,899.99,2025-03-21T14:41:06Z
+11,Charlotte,Davis,charlotte.davis@example.com,33,Netherlands,2021-05-17,true,640.20,2025-03-18T08:22:57Z
+12,Benjamin,Lopez,benjamin.lopez@example.com,52,Mexico,false,2019-04-09,45200.00,2025-02-01T12:00:00Z
+13,Amelia,White,amelia.white@example.com,27,New Zealand,true,2024-09-01,128.34,2025-03-23T06:11:45Z
+14,Lucas,Anderson,lucas.anderson@example.com,36,Sweden,true,2022-11-13,7750.88,2025-03-17T19:04:33Z
+15,Harper,Thomas,harper.thomas@example.com,24,Singapore,false,2023-12-22,54.61,2025-02-27T23:49:08Z
+16,Henry,Moore,henry.moore@example.com,43,Norway,true,2020-06-29,910.00,2025-03-15T15:20:20Z
+17,Evelyn,Jackson,evelyn.jackson@example.com,30,Japan,true,2024-02-10,3210.77,2025-03-23T03:03:03Z
+18,Alexander,Lee,alexander.lee@example.com,38,Brazil,false,2021-08-04,0.45,2025-01-31T17:28:09Z
+19,Abigail,Harris,abigail.harris@example.com,47,South Africa,true,2019-10-21,150000.12,2025-03-11T09:59:59Z
+20,Michael,Clark,michael.clark@example.com,25,USA,true,2024-07-07,687.13,2025-03-24T00:12:34Z

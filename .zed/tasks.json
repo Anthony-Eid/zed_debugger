@@ -1,11 +1,7 @@
 [
-  {
-    "label": "empty",
-    "command": "echo hello",
-    "task_type": {
-      "kind": "python",
-      "program": "ZED_WORKTREE_ROOT/main.py",
-      "type": "debug"
-    }
-  }
+    {
+        "label": "empty",
+        "command": "echo hello",
+        "hooks": ["create_git_worktree"],
+    },
 ]
