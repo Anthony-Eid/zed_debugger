@@ -1,41 +1,33 @@
 [
   {
     "adapter": "python",
-    "label": "Python",
+    "label": "Python: run examples",
     "program": "$ZED_WORKTREE_ROOT/main.py",
     "request": "launch"
   },
   {
-    "label": "PHP Active File",
+    "label": "PHP: run examples",
     "adapter": "php",
-    "program": "/Users/eid/Developer/zed_debugger/main.php",
+    "program": "$ZED_WORKTREE_ROOT/main.php",
     "request": "launch"
   },
   {
-    "label": "Python test attach",
+    "label": "Python: attach to running process",
     "adapter": "python",
-    "program": "$ZED_WORKTREE_ROOT/main.py",
     "request": {
-      "attach": {
-        "process_id": 13
-      }
+      "attach": {}
     }
   },
   {
-    "label": "Debug rust program",
+    "label": "Rust: launch built executable",
     "adapter": "lldb",
     "program": "$ZED_WORKTREE_ROOT/target/debug/zed_debugger"
   },
   {
-    "label": "attach lldb",
+    "label": "Rust: attach to running process",
     "adapter": "lldb",
     "request": {
       "attach": {}
     }
   }
-  // {
-  //   "label": "Debug javascript",
-  //   "kind": "javascript",
-  //   "program": "$ZED_WORKTREE_ROOT/main.js"
-  // }
 ]

@@ -10,12 +10,12 @@ id,first_name,last_name,email,age,country,signup_date,is_active,account_balance,
 9,Mia,Johnson,mia.johnson@example.com,39,Germany,2022-02-23,false,3301.50,2025-01-08T10:10:10Z
 10,James,Wilson,james.wilson@example.com,28,Ireland,2023-10-30,true,899.99,2025-03-21T14:41:06Z
 11,Charlotte,Davis,charlotte.davis@example.com,33,Netherlands,2021-05-17,true,640.20,2025-03-18T08:22:57Z
-12,Benjamin,Lopez,benjamin.lopez@example.com,52,Mexico,false,2019-04-09,45200.00,2025-02-01T12:00:00Z
-13,Amelia,White,amelia.white@example.com,27,New Zealand,true,2024-09-01,128.34,2025-03-23T06:11:45Z
-14,Lucas,Anderson,lucas.anderson@example.com,36,Sweden,true,2022-11-13,7750.88,2025-03-17T19:04:33Z
-15,Harper,Thomas,harper.thomas@example.com,24,Singapore,false,2023-12-22,54.61,2025-02-27T23:49:08Z
-16,Henry,Moore,henry.moore@example.com,43,Norway,true,2020-06-29,910.00,2025-03-15T15:20:20Z
-17,Evelyn,Jackson,evelyn.jackson@example.com,30,Japan,true,2024-02-10,3210.77,2025-03-23T03:03:03Z
-18,Alexander,Lee,alexander.lee@example.com,38,Brazil,false,2021-08-04,0.45,2025-01-31T17:28:09Z
-19,Abigail,Harris,abigail.harris@example.com,47,South Africa,true,2019-10-21,150000.12,2025-03-11T09:59:59Z
-20,Michael,Clark,michael.clark@example.com,25,USA,true,2024-07-07,687.13,2025-03-24T00:12:34Z
+12,Benjamin,Lopez,benjamin.lopez@example.com,52,Mexico,2019-04-09,false,45200.00,2025-02-01T12:00:00Z
+13,Amelia,White,amelia.white@example.com,27,New Zealand,2024-09-01,true,128.34,2025-03-23T06:11:45Z
+14,Lucas,Anderson,lucas.anderson@example.com,36,Sweden,2022-11-13,true,7750.88,2025-03-17T19:04:33Z
+15,Harper,Thomas,harper.thomas@example.com,24,Singapore,2023-12-22,false,54.61,2025-02-27T23:49:08Z
+16,Henry,Moore,henry.moore@example.com,43,Norway,2020-06-29,true,910.00,2025-03-15T15:20:20Z
+17,Evelyn,Jackson,evelyn.jackson@example.com,30,Japan,2024-02-10,true,3210.77,2025-03-23T03:03:03Z
+18,Alexander,Lee,alexander.lee@example.com,38,Brazil,2021-08-04,false,0.45,2025-01-31T17:28:09Z
+19,Abigail,Harris,abigail.harris@example.com,47,South Africa,2019-10-21,true,150000.12,2025-03-11T09:59:59Z
+20,Michael,Clark,michael.clark@example.com,25,USA,2024-07-07,true,687.13,2025-03-24T00:12:34Z

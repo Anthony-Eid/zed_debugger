@@ -1,2 +1,15 @@
+Debugger snippet checklist
+=========================
 
-snip
+1. Expand a loop snippet inside a sample function.
+2. Rename the loop variable and inspect every linked placeholder.
+3. Set a breakpoint inside the loop and step through two iterations.
+4. Inspect a nested record, then continue to the summary.
+
+Suggested values:
+  student = "Alice"
+  subject = "Math"
+  score = 90
+
+Expected result:
+  Alice/Math: 90 (PASS)

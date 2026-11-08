@@ -1,4 +1,4 @@
-#,Project,Scores,Avg total (max 15),Avg Innovation,Avg Technical difficulty,Avg Design,Avg Impact,Avg Presentation
+rank,project,review_count,average_total,innovation,technical_difficulty,design,impact,presentation
 1,LeadMe,3,15.00,3.00,3.00,3.00,3.00,3.00
 2,Circa,3,13.67,2.67,2.67,2.67,2.67,3.00
 3,NavAble,3,13.00,2.67,2.67,3.00,2.33,2.33
