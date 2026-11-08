@@ -5,5 +5,6 @@ test 04 alpha: f016eebe first entry
 test 07 alpha: 568bd95a6f56
 test 18 alpha: 76d19a
 test 19 alpha: 4677e76a
+test 09: alpha marker 9f9e769d
 test 10 (8e8725a0): alpha 53e4f
 test 05 alpha entry 45420e07
