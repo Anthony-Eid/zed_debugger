@@ -1,0 +1,2 @@
+Provenance test 06: beta fixture.
+Random marker: 24fd980a.

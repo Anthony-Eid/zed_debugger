@@ -4,6 +4,7 @@ version = "0.1.0"
 edition = "2021"
 description = "Small debugger examples with asynchronous Cargo artifact discovery"
 publish = false
+default-run = "zed_debugger"
 
 [dependencies]
 async-std = "1.12.0"
