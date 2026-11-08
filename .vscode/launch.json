@@ -1,16 +1,15 @@
 {
-  // Use IntelliSense to learn about possible attributes.
-  // Hover to view descriptions of existing attributes.
-  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
     {
       "type": "lldb",
       "request": "launch",
-      "name": "Cargo launch",
+      "name": "Rust: build and launch",
       "cargo": {
         "args": [
-          "build"
+          "build",
+          "--bin",
+          "zed_debugger"
         ]
       },
       "args": []
@@ -18,7 +17,7 @@
     {
       "type": "lldb-dap",
       "request": "launch",
-      "name": "Debug executable 'zed_debugger'",
+      "name": "Rust: launch built executable",
       "program": "${workspaceFolder}/target/debug/zed_debugger",
       "args": [],
       "cwd": "${workspaceFolder}"
@@ -26,13 +25,20 @@
     {
       "type": "lldb-dap",
       "request": "attach",
-      "name": "Attach 'zed_debugger'",
-      "pid": 6955
+      "name": "Rust: attach to running process",
+      "pid": "${command:pickProcess}"
+    },
+    {
+      "type": "debugpy",
+      "request": "launch",
+      "name": "Python: run examples",
+      "program": "${workspaceFolder}/main.py",
+      "console": "integratedTerminal"
     },
     {
       "type": "debugpy",
       "request": "attach",
-      "name": "python attach",
+      "name": "Python: attach to running process",
       "processId": "${command:pickProcess}",
       "logToFile": true
     }

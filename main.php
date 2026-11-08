@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-const PROFILE_RUN = "large-fast-edit-stress-php-005";
-
+// Keep this threshold aligned with the Python and C score examples.
+const PASSING_SCORE = 60;
 
 final class ScoreRecord
 {
@@ -12,16 +12,23 @@ final class ScoreRecord
         public string $subject,
         public int $value,
         public int $attempts = 1,
-    ) {}
+    ) {
+        if ($value < 0 || $value > 100) {
+            throw new InvalidArgumentException("score must be between 0 and 100");
+        }
+        if ($attempts < 1) {
+            throw new InvalidArgumentException("attempts must be positive");
+        }
+    }
 
     public function isPassing(): bool
     {
-        return $this->value >= 60;
+        return $this->value >= PASSING_SCORE;
     }
 
     public function weighted(): float
     {
-        $penalty = max($this->attempts - 1, 0) * 0.05;
+        $penalty = min(($this->attempts - 1) * 0.05, 1.0);
         return $this->value * (1.0 - $penalty);
     }
 
@@ -54,7 +61,10 @@ final class GradeBook
         if (count($this->records) === 0) {
             return 0.0;
         }
-        $passing = array_filter($this->records, fn($r) => $r->isPassing());
+        $passing = array_filter(
+            $this->records,
+            static fn(ScoreRecord $record): bool => $record->isPassing(),
+        );
         return count($passing) / count($this->records);
     }
 
@@ -63,20 +73,29 @@ final class GradeBook
         if (count($this->records) === 0) {
             return 0.0;
         }
-        $total = array_sum(array_map(fn($r) => $r->value, $this->records));
+        $total = array_sum(array_map(
+            static fn(ScoreRecord $record): int => $record->value,
+            $this->records,
+        ));
         return $total / count($this->records);
     }
 }
 
+/** @param list<int> $scores */
 function buildProfile(string $name, int $age, array $scores): array
 {
-    $passing = array_values(array_filter($scores, fn($s) => $s >= 60));
-    $failing = array_values(array_filter($scores, fn($s) => $s < 60));
+    $passing = array_values(array_filter(
+        $scores,
+        static fn(int $score): bool => $score >= PASSING_SCORE,
+    ));
+    $failing = array_values(array_filter(
+        $scores,
+        static fn(int $score): bool => $score < PASSING_SCORE,
+    ));
 
     return [
-        "name" => ucwords(trim($name)),
+        "name" => ucwords(strtolower(trim($name))),
         "age" => $age,
-        "run" => PROFILE_RUN,
         "passing" => $passing,
         "failing" => $failing,
         "score_count" => count($scores),
@@ -88,13 +107,16 @@ function buildProfile(string $name, int $age, array $scores): array
 
 function generateRows(int $count): array
 {
+    if ($count < 0) {
+        throw new InvalidArgumentException("row count cannot be negative");
+    }
     $rows = [];
     for ($i = 0; $i < $count; $i++) {
         $rows[] = [
             "row" => $i,
             "square" => $i * $i,
             "parity" => $i % 2 === 0 ? "even" : "odd",
-            "label" => sprintf("php-row-%03d", $i),
+            "label" => sprintf("sample-row-%03d", $i),
         ];
     }
     return $rows;
@@ -109,7 +131,7 @@ $records = [
 
 foreach ($records as $index => $record) {
     $book->add($record);
-    echo sprintf("%02d %s\n", $index, $record->describe());
+    echo sprintf("%02d %s\n", $index + 1, $record->describe());
 }
 
 echo sprintf(
@@ -130,7 +152,7 @@ $profile = buildProfile("  alice debugger  ", 25, [
 ]);
 echo "Profile name: {$profile["name"]} | pass_rate: {$profile["pass_rate"]}\n";
 
-$rows = generateRows(16);
+$rows = generateRows(4);
 echo "Generated rows: " . count($rows) . "\n";
 foreach ($rows as $row) {
     echo sprintf(

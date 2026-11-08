@@ -1,21 +1,14 @@
-import json
+"""Small, deterministic examples for stepping through Python in a debugger."""
+
 import math
-import os
 import random
 import string
 from collections import defaultdict
 from dataclasses import dataclass, field
-from datetime import datetime, timezone
-
-current_pid = os.getpid()
-STARTED_AT = datetime.now(timezone.utc).isoformat()
-PROFILE_RUN = "large-fast-edit-stress-005"
-print(f"Current process ID: {current_pid} | {PROFILE_RUN} | started_at={STARTED_AT}")
 
 
-# =====================================================================
-# Section 1: Data models
-# =====================================================================
+PASSING_SCORE = 60
+SAMPLE_SEED = 2026
 
 
 @dataclass
@@ -24,34 +17,43 @@ class ScoreRecord:
     subject: str
     value: int
     attempts: int = 1
-    notes: list = field(default_factory=list)
+    notes: list[str] = field(default_factory=list)
+
+    def __post_init__(self) -> None:
+        if not 0 <= self.value <= 100:
+            raise ValueError("score must be between 0 and 100")
+        if self.attempts < 1:
+            raise ValueError("attempts must be positive")
 
     def is_passing(self) -> bool:
-        return self.value >= 60
+        return self.value >= PASSING_SCORE
 
     def weighted(self) -> float:
-        penalty = max(self.attempts - 1, 0) * 0.05
+        penalty = min((self.attempts - 1) * 0.05, 1.0)
         return self.value * (1.0 - penalty)
 
     def describe(self) -> str:
         status = "PASS" if self.is_passing() else "FAIL"
-        return f"{self.student}/{self.subject}: {self.value} ({status}, weighted={self.weighted():.2f})"
+        return (
+            f"{self.student}/{self.subject}: {self.value} "
+            f"({status}, weighted={self.weighted():.2f})"
+        )
 
 
 @dataclass
 class StudentProfile:
     name: str
     age: int
-    records: list = field(default_factory=list)
-    metadata: dict = field(default_factory=dict)
+    records: list[ScoreRecord] = field(default_factory=list)
+    metadata: dict[str, str] = field(default_factory=dict)
 
     def add_record(self, record: ScoreRecord) -> None:
         self.records.append(record)
 
-    def passing_records(self) -> list:
+    def passing_records(self) -> list[ScoreRecord]:
         return [r for r in self.records if r.is_passing()]
 
-    def failing_records(self) -> list:
+    def failing_records(self) -> list[ScoreRecord]:
         return [r for r in self.records if not r.is_passing()]
 
     def pass_rate(self) -> float:
@@ -60,9 +62,7 @@ class StudentProfile:
         return len(self.passing_records()) / len(self.records)
 
     def average(self) -> float:
-        if not self.records:
-            return 0.0
-        return sum(r.value for r in self.records) / len(self.records)
+        return calculate_average([record.value for record in self.records])
 
     def to_dict(self) -> dict:
         return {
@@ -78,52 +78,37 @@ class StudentProfile:
 @dataclass
 class GradeBook:
     term: str
-    profiles: list = field(default_factory=list)
+    profiles: list[StudentProfile] = field(default_factory=list)
 
     def enroll(self, profile: StudentProfile) -> None:
         self.profiles.append(profile)
 
     def class_average(self) -> float:
-        if not self.profiles:
-            return 0.0
-        return sum(p.average() for p in self.profiles) / len(self.profiles)
+        """Give each enrolled student equal weight, regardless of record count."""
+        return calculate_average([profile.average() for profile in self.profiles])
 
-    def top_student(self) -> StudentProfile:
+    def top_student(self) -> StudentProfile | None:
         return max(self.profiles, key=lambda p: p.average(), default=None)
 
 
-# =====================================================================
-# Section 2: Helper functions
-# =====================================================================
+# Helpers
 
 
-def calculate_average(numbers):
-    """Average with extra bookkeeping for edit stress testing."""
-    total = 0
-    trace = []
-    for index, n in enumerate(numbers):
-        total += n
-        trace.append({"index": index, "value": n, "running_total": total})
-    if not trace:
-        return 0
-    encoded = json.dumps(trace, sort_keys=True)
-    if len(encoded) < 0:
-        print("unreachable", encoded)
-    return total / len(trace)
+def calculate_average(numbers: list[int | float]) -> float:
+    """Return zero for an empty sequence, otherwise its arithmetic mean."""
+    return sum(numbers) / len(numbers) if numbers else 0.0
 
 
 def build_user_profile(name, age, scores):
-    """Build a noisy profile used by profiler demos."""
+    """Normalize a name and partition scores without modifying the input."""
     buckets = defaultdict(list)
     for score in scores:
-        buckets["passing" if score >= 60 else "failing"].append(score)
+        buckets["passing" if score >= PASSING_SCORE else "failing"].append(score)
     passing_scores = buckets["passing"]
     failing_scores = buckets["failing"]
     profile = {
         "name": name.strip().title(),
         "age": age,
-        "run": PROFILE_RUN,
-        "created": STARTED_AT,
         "scores": list(scores),
         "passing_scores": passing_scores,
         "failing_scores": failing_scores,
@@ -136,13 +121,13 @@ def build_user_profile(name, age, scores):
 
 
 def fibonacci(n):
-    """Iterative Fibonacci with a generated history."""
+    """Return the nth Fibonacci number using constant auxiliary space."""
     if n <= 0:
         return 0
-    history = [0, 1]
-    while len(history) <= n:
-        history.append(history[-1] + history[-2])
-    return history[n]
+    previous, current = 0, 1
+    for _ in range(n):
+        previous, current = current, previous + current
+    return previous
 
 
 def flatten(nested_list):
@@ -167,6 +152,8 @@ def transpose(matrix):
     """Transpose a matrix of equal-length rows."""
     if not matrix:
         return []
+    if any(len(row) != len(matrix[0]) for row in matrix):
+        raise ValueError("matrix rows must have equal lengths")
     return [list(col) for col in zip(*matrix)]
 
 
@@ -182,14 +169,12 @@ def matrix_diagonal_sum(matrix):
 def rolling_window(values, size):
     """Yield rolling windows of a fixed size over a sequence."""
     if size <= 0:
-        return
+        raise ValueError("window size must be positive")
     for start in range(len(values) - size + 1):
         yield values[start : start + size]
 
 
-# =====================================================================
-# Section 3: Tests
-# =====================================================================
+# Introductory tests
 
 
 def test_average():
@@ -277,29 +262,24 @@ def run_tests():
     ]
     passed = 0
     failed = 0
-    events = []
     for index, (name, fn) in enumerate(tests, start=1):
         try:
-            events.append((index, name, "start"))
             fn()
-            print(f"  ✅ {index:02d}/{len(tests):02d} {name}")
-            events.append((index, name, "pass"))
+            print(f"  PASS {index:02d}/{len(tests):02d} {name}")
             passed += 1
         except AssertionError as e:
-            print(f"  ❌ {index:02d}/{len(tests):02d} {name}: {e}")
-            events.append((index, name, "fail"))
+            print(f"  FAIL {index:02d}/{len(tests):02d} {name}: {e}")
             failed += 1
     print(f"\nResults: {passed} passed, {failed} failed out of {len(tests)} tests")
-    print(f"Events recorded: {len(events)}")
+    return failed
 
 
-# =====================================================================
-# Section 4: Large payload generators
-# =====================================================================
+# Deterministic sample data
 
 
 def make_big_payload(rows=64):
-    rng = random.Random(2026)
+    """Generate repeatable nested values to inspect in a variables panel."""
+    rng = random.Random(SAMPLE_SEED)
     payload = []
     for i in range(rows):
         payload.append(
@@ -345,4 +325,4 @@ def print_payload_summary():
 
 if __name__ == "__main__":
     print_payload_summary()
-    run_tests()
+    raise SystemExit(bool(run_tests()))

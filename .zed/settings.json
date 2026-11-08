@@ -1,7 +1,11 @@
 {
-  "dap": {
-    "lldb": {
-      "binary": "/Users/eid/Developer/llvm-project/lldb/build/bin/lldb-dap"
+  "format_on_save": "on",
+  "languages": {
+    "Python": {
+      "tab_size": 4
+    },
+    "C": {
+      "tab_size": 4
     }
   }
 }

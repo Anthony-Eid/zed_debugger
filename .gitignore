@@ -1,6 +1,9 @@
 /target
 .repoproject/*
-.venv
-.venv/*
 .venv/
-.venv/**/*
+__pycache__/
+*.py[cod]
+.pytest_cache/
+/build/
+*_logs.txt
+*-logs.txt

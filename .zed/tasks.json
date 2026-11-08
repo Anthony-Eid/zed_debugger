@@ -1,12 +1,27 @@
 [
-    {
-        "label": "empty",
-        "command": "echo hello",
-        "hooks": ["create_git_worktree"],
-    },
-    {
-        "label": "sleep",
-        "command": "sleep 5",
-        "hooks": ["create_git_worktree"],
-    },
+  {
+    "label": "Rust: build",
+    "command": "cargo build --bin zed_debugger",
+    "cwd": "$ZED_WORKTREE_ROOT"
+  },
+  {
+    "label": "Rust: test",
+    "command": "cargo test",
+    "cwd": "$ZED_WORKTREE_ROOT"
+  },
+  {
+    "label": "Python: run examples",
+    "command": "python3 main.py",
+    "cwd": "$ZED_WORKTREE_ROOT"
+  },
+  {
+    "label": "Python: test",
+    "command": "python3 -m unittest discover -s tests -v",
+    "cwd": "$ZED_WORKTREE_ROOT"
+  },
+  {
+    "label": "PHP: run examples",
+    "command": "php main.php",
+    "cwd": "$ZED_WORKTREE_ROOT"
+  }
 ]
