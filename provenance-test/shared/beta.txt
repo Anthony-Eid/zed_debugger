@@ -1,2 +1,4 @@
 test 08 beta: e41a907d
+test 07 beta: 568bd95a6f56
+test 18 beta: b42f60
 test 19 beta: 4677e76a

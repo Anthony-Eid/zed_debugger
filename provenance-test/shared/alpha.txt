@@ -1,2 +1,4 @@
 test 08 alpha: 4c8e1b7a
+test 07 alpha: 568bd95a6f56
+test 18 alpha: 76d19a
 test 19 alpha: 4677e76a
