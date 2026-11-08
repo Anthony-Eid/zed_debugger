@@ -1,1 +1,2 @@
 test 19 beta: 4677e76a
+Test 20 beta: copper kite 2704.
