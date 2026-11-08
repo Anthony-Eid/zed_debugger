@@ -1,4 +1,5 @@
 test 03 alpha: 2576ae79
+test 04 alpha: f016eebe first entry
 test 07 alpha: 568bd95a6f56
 test 18 alpha: 76d19a
 test 19 alpha: 4677e76a
