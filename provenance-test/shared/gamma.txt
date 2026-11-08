@@ -1,2 +1,4 @@
 test 16 gamma: e54fb0c2
+test 07 gamma: 568bd95a6f56
+test 18 gamma: 9ce328
 test 19 gamma: 4677e76a
