@@ -1,8 +1,8 @@
 //! A utility program for building Rust projects and discovering the resulting executable path.
-//! 
+//!
 //! This module uses async IO and process management to execute `cargo build --message-format=json`,
 //! stream its output, and parse the JSON artifacts to find the absolute path of the built binary.
-//! This is typically useful for debuggers or IDE extensions (like a Zed debugger integration) 
+//! This is typically useful for debuggers or IDE extensions (like a Zed debugger integration)
 //! that need to build code and immediately launch a debugger on the resulting binary.
 
 use macro_rules_attribute::apply;
