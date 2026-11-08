@@ -4,7 +4,7 @@
     {
       "label": "Rust: build",
       "type": "shell",
-      "command": "cargo build --bin zed_debugger",
+      "command": "cargo build --bins",
       "group": "build",
       "problemMatcher": ["$rustc"]
     },
