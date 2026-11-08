@@ -1,7 +1,7 @@
 [
   {
     "label": "Rust: build",
-    "command": "cargo build --bin zed_debugger",
+    "command": "cargo build --bins",
     "cwd": "$ZED_WORKTREE_ROOT"
   },
   {
