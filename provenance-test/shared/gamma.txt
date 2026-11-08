@@ -1,4 +1,5 @@
 test 01: gamma entry ee3a9966
+test 04 gamma: f016eebe second entry
 test 07 gamma: 568bd95a6f56
 test 18 gamma: 9ce328
 test 19 gamma: 4677e76a
