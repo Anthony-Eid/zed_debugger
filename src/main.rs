@@ -14,7 +14,7 @@ use smol::{
 use smol_macros::main;
 use std::io;
 
-/// Ignore diagnostics and library artifacts; select this package's binary.
+/// Ignora los diagnósticos y artefactos de biblioteca; selecciona el binario de este paquete.
 fn find_executable(output: &str) -> Option<String> {
     output.lines().find_map(|line| {
         let message: Value = serde_json::from_str(line).ok()?;
@@ -31,13 +31,13 @@ fn find_executable(output: &str) -> Option<String> {
     })
 }
 
-/// Runs `cargo build --message-format=json` as an asynchronous subprocess.
-/// Parses the stdout from Cargo, which is a stream of JSON objects,
-/// to find and return the path to the compiled executable.
+/// Ejecuta `cargo build --message-format=json` como un subproceso asíncrono.
+/// Analiza la salida estándar de Cargo, que es un flujo de objetos JSON,
+/// para encontrar y devolver la ruta del ejecutable compilado.
 ///
-/// Returns:
-/// - `Ok(String)` containing the executable path if compilation succeeded and an executable was built.
-/// - `Err` if the subprocess failed to start, there was an IO error reading from it, or no executable was found in the output.
+/// Devuelve:
+/// - `Ok(String)` con la ruta del ejecutable si la compilación tuvo éxito y se creó un ejecutable.
+/// - `Err` si el subproceso no se inició, hubo un error de E/S al leerlo o no se encontró un ejecutable en la salida.
 async fn run_cargo_build_json() -> io::Result<String> {
     let mut child = Command::new("cargo")
         .args(["build", "--bin", "zed_debugger", "--message-format=json"])
@@ -63,8 +63,8 @@ async fn run_cargo_build_json() -> io::Result<String> {
     })
 }
 
-/// Entry point for the application.
-/// It triggers the async cargo build function and prints the resulting executable path.
+/// Punto de entrada de la aplicación.
+/// Ejecuta la función asíncrona de compilación de Cargo e imprime la ruta del ejecutable resultante.
 #[apply(main!)]
 async fn main() -> io::Result<()> {
     let executable = run_cargo_build_json().await?;
