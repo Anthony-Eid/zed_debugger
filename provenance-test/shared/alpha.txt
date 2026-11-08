@@ -1,2 +1,4 @@
 Test 15 alpha: 5d8fc2f0.
+test 07 alpha: 568bd95a6f56
+test 18 alpha: 76d19a
 test 19 alpha: 4677e76a
