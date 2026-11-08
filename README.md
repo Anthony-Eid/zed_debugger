@@ -99,3 +99,8 @@ small manual edit to compare it with the agent-authored changes.
 Generated logs, Python bytecode, and build outputs are not part of this exercise.
 Ignore rules prevent new artifacts from being added; existing tracked artifacts
 are left untouched.
+
+## Joke
+
+Why do programmers prefer dark mode? Because light attracts bugs!
+
