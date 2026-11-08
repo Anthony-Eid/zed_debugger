@@ -3,4 +3,5 @@ test 07 gamma: 568bd95a6f56
 test 18 gamma: 9ce328
 test 19 gamma: 4677e76a
 test 09: gamma marker 9f9e769d
+test 10 (8e8725a0): gamma 913cf
 test 05 gamma entry 9648cad6
