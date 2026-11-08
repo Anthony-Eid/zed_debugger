@@ -45,6 +45,21 @@ Examples are intentionally deterministic: repeated runs produce the same sample 
 The Rust example builds this package once as a subprocess, then prints the binary
 path. It does not recursively run the resulting executable.
 
+## Rust debugger torture test
+
+`src/bin/torture.rs` is a second Rust binary that tries to break debuggers. Each
+section targets a known weak spot: niche-optimized enums, unions and packed
+structs, a 1 MiB string, a 100k-element `Vec`, a wrapped `VecDeque`, `Rc` cycles,
+fat pointers, closures, shadowed variables, a 5,000-frame stack, four threads
+stopping at once, async state machines, caught panics, and hostile output (ANSI
+codes, carriage returns, invalid UTF-8). `BREAK:` comments mark suggested
+breakpoints and what to check at each one.
+
+```sh
+cargo run --bin torture             # every section
+cargo run --bin torture -- threads  # one section; --list shows them all
+```
+
 ## Check changes
 
 ```sh
