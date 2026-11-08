@@ -1,0 +1,2 @@
+Provenance test 06: gamma fixture.
+Random marker: f397ab45.
