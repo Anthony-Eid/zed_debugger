@@ -3,4 +3,5 @@ test 07 beta: 568bd95a6f56
 test 18 beta: b42f60
 test 19 beta: 4677e76a
 test 06 beta: cb4e871d
+test 10 (8e8725a0): beta 6bb81
 test 05 beta entry 98644c03
