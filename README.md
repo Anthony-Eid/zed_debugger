@@ -2,11 +2,19 @@
 
 A small Rust utility that programmatically builds a Rust project and extracts the path to the resulting compiled executable. 
 
+Welcome, traveler! Think of this repository as a tiny Hyrule for debugger
+adventures: pick a path, set a breakpoint, and explore one room at a time.
+No Master Sword required.
+
 ## Overview
 
 This project demonstrates how to run `cargo build --message-format=json` as an asynchronous subprocess and parse Cargo's JSON output stream to locate the path of the built executable. It uses `smol` for async process management and IO, and `serde_json` for processing Cargo's JSON messages.
 
 Given the project name and the `dap-types` dependency, this utility is likely a stepping stone for a Debug Adapter Protocol (DAP) integration or a debugging tool, where discovering the path to the newly built binary is necessary before starting a debug session (e.g., via `lldb-dap` or `debugpy`).
+
+Cargo's JSON messages are our treasure map; the executable path is the chest
+we're looking for. Navi might say “Hey, listen!” when a build fails, but the
+actual diagnostics come from Cargo.
 
 ## Dependencies
 
@@ -17,6 +25,8 @@ Given the project name and the `dap-types` dependency, this utility is likely a 
 ## Usage
 
 Running the project will trigger a `cargo build` on the current package (which in this case, compiles itself), and print the path to the executable:
+
+It's dangerous to go alone—take this command:
 
 ```bash
 cargo run
@@ -32,6 +42,8 @@ Found executable at: /path/to/zed_debugger/target/debug/zed_debugger
 
 A small workspace for stepping through code and testing cross-file editing in Delta.
 Examples are intentionally deterministic: repeated runs produce the same sample data.
+Choose your dungeon: Python, PHP, C, and Rust each offer different things to
+inspect, like items tucked away across the kingdom.
 
 ## Run the examples
 
@@ -55,12 +67,18 @@ stopping at once, async state machines, caught panics, and hostile output (ANSI
 codes, carriage returns, invalid UTF-8). `BREAK:` comments mark suggested
 breakpoints and what to check at each one.
 
+Consider the torture test a debugger's Trial of the Sword: huge collections,
+deep stacks, threads, and panics are its assorted guardians. Start with one
+section if you would rather visit a shrine than tackle the whole dungeon.
+
 ```sh
 cargo run --bin torture             # every section
 cargo run --bin torture -- threads  # one section; --list shows them all
 ```
 
 ## Check changes
+
+Before declaring the quest complete, check your inventory:
 
 ```sh
 python3 -m unittest discover -s tests -v
@@ -81,6 +99,8 @@ with the **Rust: build** task before launching it. VS Code configurations live i
 Install the appropriate language debugger extension or adapter for your editor.
 PHP debugging additionally needs Xdebug enabled in your local PHP installation.
 Attach configurations select a running process rather than storing a machine-specific PID.
+The launch configuration is your Sheikah Slate; a breakpoint is a travel point
+back to the line you want to investigate.
 
 ## Sample documents
 
@@ -90,11 +110,16 @@ Attach configurations select a running process rather than storing a machine-spe
 - `src/test.csv`: fictional account data with ISO dates and boolean activity flags.
 - `snippet_test.txt`: a short snippet-expansion checklist.
 
+These fixtures are like Korok seeds: small discoveries scattered around the map.
+You don't need to collect them all to run an example.
+
 ## Global provenance exercise
 
 Review the working changes across language implementations, editor settings, tests,
 and fixtures. Inspect attribution on both changed and unchanged lines, then make a
 small manual edit to compare it with the agent-authored changes.
+Follow the trail like the Hero of Time: compare the past and present before
+making your own mark.
 
 Generated logs, Python bytecode, and build outputs are not part of this exercise.
 Ignore rules prevent new artifacts from being added; existing tracked artifacts
