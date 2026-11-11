@@ -104,3 +104,7 @@ are left untouched.
 
 Why do programmers prefer dark mode? Because light attracts bugs!
 
+## Random Fact
+
+The first computer bug was an actual real-life moth found in the Harvard Mark II computer in 1947.
+
