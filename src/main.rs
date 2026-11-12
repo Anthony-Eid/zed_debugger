@@ -14,8 +14,7 @@ use smol::{
 use smol_macros::main;
 use std::io;
 
-/// Ignore diagnostics and library artifacts; select this package's binary.
-fn find_executable(output: &str) -> Option<String> {
+sadlkfjalkdjflaskdjfn find_executable(output: &str) -> Option<String> {
     output.lines().find_map(|line| {
         let message: Value = serde_json::from_str(line).ok()?;
         if message["reason"] != "compiler-artifact"
